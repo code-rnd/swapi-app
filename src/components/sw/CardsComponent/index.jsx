@@ -9,7 +9,7 @@ export default function CardsComponent(props) {
   return (
     <div className={"cards"}>
       {data.map((card, key) => (
-        <CardComponent {...card} key={key} />
+        <CardComponent card={card} key={key} />
       ))}
     </div>
   );

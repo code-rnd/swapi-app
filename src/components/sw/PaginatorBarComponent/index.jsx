@@ -1,5 +1,5 @@
 import React from "react";
-import { getLastElArr } from "../../../utils";
+import { getElArr } from "../../../utils";
 
 import "./style.scss";
 
@@ -13,7 +13,7 @@ export default function PaginatorBarComponent(props) {
       <div
         className={"paginatorBar__next paginatorBar__btn"}
         onClick={() => {
-          getObjects("people", getLastElArr(next, "/"));
+          getObjects(getElArr(next, "/api/"));
         }}
         disabled={!next || isFetching}
       >
@@ -27,7 +27,7 @@ export default function PaginatorBarComponent(props) {
       <div
         className={"paginatorBar__previous paginatorBar__btn"}
         onClick={() => {
-          getObjects("people", getLastElArr(previous, "/"));
+          getObjects(getElArr(previous, "/api/"));
         }}
         disabled={!previous || isFetching}
       >

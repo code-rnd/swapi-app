@@ -2,16 +2,8 @@ import { SET_OBJECT, SET_OBJECTS, TOGGLE_IS_FETCHING } from "../../actions/sw";
 
 export const initialState = {
   data: {
-    objects: {
-      people: [],
-      planets: [],
-      starships: []
-    },
-    currentObjects: {
-      people: null,
-      planets: null,
-      starships: null
-    }
+    objects: [],
+    currentObjects: {}
   },
 
   isFetching: false
@@ -19,45 +11,35 @@ export const initialState = {
 
 export function swReducers(state = initialState, action) {
   const oldData = state.data;
-  const oldObjects = state.data.objects;
-  const oldCurrentObjects = state.data.currentObjects;
 
-  let categoryName = null;
-  let data = {};
+  let newObjects = [];
+  let newCurrentObject = {};
 
   let newIsFetching = null;
 
   switch (action.type) {
     case SET_OBJECT:
-      categoryName = action.data.categoryName;
-      data = action.data.data[categoryName];
+      newCurrentObject = action.data;
 
       return {
         ...state,
         ...{
           data: {
             ...oldData,
-            currentObjects: {
-              ...oldCurrentObjects,
-              [categoryName]: data
-            }
+            currentObjects: newCurrentObject
           }
         }
       };
 
     case SET_OBJECTS:
-      categoryName = action.data.categoryName;
-      data = action.data.data[categoryName];
+      newObjects = action.data;
 
       return {
         ...state,
         ...{
           data: {
             ...oldData,
-            objects: {
-              ...oldObjects,
-              [categoryName]: data
-            }
+            objects: newObjects
           }
         }
       };

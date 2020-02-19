@@ -9,18 +9,11 @@ export const swApi = {
   getObject(categoryName, id) {
     return instance
       .get(`${categoryName}/${id}/`)
-      .then(response => this._getGenerateObject(categoryName, response));
+      .then(response => response.data);
   },
 
   // получить группу объектов из выбранной категории
-  getObjects(categoryName, url = "") {
-    return instance
-      .get(`${categoryName}/${url}`)
-      .then(response => this._getGenerateObject(categoryName, response));
-  },
-
-  // создаю объект, для дальнейшей передачи в стейт
-  _getGenerateObject(categoryName, response) {
-    return { [categoryName]: response.data };
+  getObjects(url) {
+    return instance.get(`${url}`).then(response => response.data);
   }
 };

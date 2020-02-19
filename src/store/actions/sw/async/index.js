@@ -9,7 +9,7 @@ export const getObject = (categoryName, id) => {
       .getObject(categoryName, id)
       .then(data => {
         dispatch(toggleIsFetching(false));
-        dispatch(setObject({ categoryName: categoryName, data: data }));
+        dispatch(setObject(data));
       })
       .catch(() => {
         dispatch(toggleIsFetching(false));
@@ -25,7 +25,7 @@ export const getObjects = (categoryName, url = "") => {
       .getObjects(categoryName, url)
       .then(data => {
         dispatch(toggleIsFetching(false));
-        dispatch(setObjects({ categoryName: categoryName, data: data }));
+        dispatch(setObjects(data));
       })
       .catch(() => {
         dispatch(toggleIsFetching(false));

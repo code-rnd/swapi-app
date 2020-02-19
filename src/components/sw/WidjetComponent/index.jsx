@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import CardsComponent from "../CardsComponent";
 import PaginatorBarComponent from "../PaginatorBarComponent";
+import SearchMenuComponent from "../SearchMenuComponent";
 
 import "./style.scss";
 
 export default function WidjetComponent(props) {
-  const { data } = props;
-  const { objects } = data;
-  const { people } = objects;
-  const { results, next, previous } = people;
+  const { objects } = props;
+  const { next, previous, results } = objects;
 
   const { isFetching } = props;
   const { getObjects } = props;
@@ -17,20 +16,18 @@ export default function WidjetComponent(props) {
   const [isResults, isSetResults] = useState(null);
 
   useEffect(() => {
-    getObjects("people");
-  }, []);
+    if (!results || !results.length) {
+      return;
+    }
 
-  useEffect(() => {
     isSetResults(results);
   }, [results]);
 
   const getFormDisplay = () => {
     return (
       <div className="display">
-        swApi (category: People)
-        <CardsComponent data={results} />
+        <CardsComponent data={isResults} />
         <PaginatorBarComponent
-          isFetching={isFetching}
           next={next}
           previous={previous}
           getObjects={getObjects}
@@ -41,7 +38,9 @@ export default function WidjetComponent(props) {
 
   return (
     <div className={"widjet"}>
-      {isResults ? getFormDisplay() : "loading..."}
+      <SearchMenuComponent getObjects={getObjects} />
+      {isResults && getFormDisplay()}
+      {isFetching && "loading..."}
     </div>
   );
 }

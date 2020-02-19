@@ -3,7 +3,7 @@ import { getObjects } from "../../../store/actions/sw/async";
 import WidjetComponent from "../../../components/sw/WidjetComponent";
 
 const mapStateToProps = state => ({
-  data: state.sw.data,
+  objects: state.sw.data.objects,
   isFetching: state.sw.isFetching
 });
 
