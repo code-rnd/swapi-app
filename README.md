@@ -1,6 +1,6 @@
 # swapi-app
-cra + redux + thunk + axios(testing swApi)
-собрал на базе https://github.com/code-rnd/default-app
+cra + redux + thunk + axios(testing swApi) <br>
+собрал на базе https://github.com/code-rnd/default-app <br>
 
 # Развернуть фронт локально
 <ul>
