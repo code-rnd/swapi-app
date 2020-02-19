@@ -27,7 +27,7 @@ export default function WidjetComponent(props) {
   const getFormDisplay = () => {
     return (
       <div className="display">
-        swApi
+        swApi (category: People)
         <CardsComponent data={results} />
         <PaginatorBarComponent
           isFetching={isFetching}
