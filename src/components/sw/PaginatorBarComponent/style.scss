@@ -1,0 +1,11 @@
+.paginatorBar {
+  display: flex;
+  justify-content: space-between;
+
+  .paginatorBar__btn {
+    border: 1px solid #000;
+    padding: 5px;
+
+    cursor: pointer;
+  }
+}

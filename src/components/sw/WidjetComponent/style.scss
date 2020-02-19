@@ -1,0 +1,13 @@
+.widjet {
+  border: 1px solid #000;
+  padding: 10px;
+  height: 90%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .display {
+    height: 100%;
+  }
+}

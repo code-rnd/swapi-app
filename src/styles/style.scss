@@ -12,9 +12,12 @@ body {
   .margin-top20px {
     margin-top: 20px;
   }
+  .margin-bottom20px {
+    margin-bottom: 20px;
+  }
 
-  .max-size {
-    max-width: 40%;
-    max-height: 20%;
+  div[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }

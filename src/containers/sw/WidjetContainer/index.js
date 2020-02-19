@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { getObject, getObjects } from "../../../store/actions/sw/async";
-import SwComponent from "../../../components/sw/SwComponent";
+import { getObjects } from "../../../store/actions/sw/async";
+import WidjetComponent from "../../../components/sw/WidjetComponent";
 
 const mapStateToProps = state => ({
   data: state.sw.data,
@@ -8,11 +8,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getObject,
   getObjects
 };
 
-export const SwContainer = connect(
+export const WidjetContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SwComponent);
+)(WidjetComponent);
