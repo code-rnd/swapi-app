@@ -7,15 +7,16 @@ export default function ButtonComponent(props) {
 
   return (
     <div className={"buttonContainer"}>
-      <input
+      <div
         type={"button"}
-        value={value}
         onClick={() => {
           handleClick(url);
         }}
         disabled={isDisabled}
         className={"sw-btn"}
-      />
+      >
+        {value}
+      </div>
     </div>
   );
 }

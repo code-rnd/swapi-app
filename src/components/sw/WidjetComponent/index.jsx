@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import CardsComponent from "../CardsComponent";
 import PaginatorBarComponent from "../PaginatorBarComponent";
 import SearchMenuComponent from "../SearchMenuComponent";
+import LoadingComponent from "../LoadingComponent";
 
 import "./style.scss";
 
@@ -37,19 +38,11 @@ export default function WidjetComponent(props) {
     );
   };
 
-  const getFormLoading = () => {
-    return (
-      <div className="loading">
-        <div className="spinner">loading...</div>
-      </div>
-    );
-  };
-
   return (
     <div className={"widjet"}>
       <SearchMenuComponent getObjects={getObjects} />
       {isResults && getFormDisplay()}
-      {isFetching && getFormLoading()}
+      {isFetching && <LoadingComponent isLoading={isFetching} />}
     </div>
   );
 }
