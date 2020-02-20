@@ -13,7 +13,8 @@ export default function WidjetComponent(props) {
   } = props;
 
   const { isFetching } = props;
-  const { getObjects } = props;
+  const { getObjects, setCurrentCategory } = props;
+  const { images } = props;
 
   const [isResults, isSetResults] = useState(null);
 
@@ -28,7 +29,7 @@ export default function WidjetComponent(props) {
   const getFormDisplay = () => {
     return (
       <div className="display">
-        <CardsComponent data={isResults} />
+        <CardsComponent data={isResults} images={images} />
         <PaginatorBarComponent
           next={next}
           previous={previous}
@@ -40,9 +41,12 @@ export default function WidjetComponent(props) {
 
   return (
     <div className={"widjet"}>
-      <SearchMenuComponent getObjects={getObjects} />
+      <SearchMenuComponent
+        getObjects={getObjects}
+        setCurrentCategory={setCurrentCategory}
+      />
       {isResults && getFormDisplay()}
-      {isFetching && <LoadingComponent isLoading={isFetching} />}
+      {isFetching && <LoadingComponent />}
     </div>
   );
 }

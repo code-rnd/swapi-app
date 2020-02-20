@@ -11,7 +11,9 @@
 
       .card {
         max-height: 96%;
-        min-width: fit-content;
+
+        min-width: 100%;
+        box-sizing: border-box;
 
         overflow-x: scroll;
       }

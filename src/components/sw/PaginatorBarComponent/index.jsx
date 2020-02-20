@@ -1,5 +1,5 @@
 import React from "react";
-import { getElArr } from "../../../utils";
+import { getElArrUtil } from "../../../utils";
 import ButtonComponent from "../ButtonComponent";
 
 import "./style.scss";
@@ -11,7 +11,7 @@ export default function PaginatorBarComponent(props) {
 
   const handleClick = baseUrl => {
     const split = "/api/";
-    const url = getElArr(baseUrl, split);
+    const url = getElArrUtil(baseUrl, split);
 
     getObjects(url);
   };

@@ -1,5 +1,5 @@
 import React from "react";
-import CardComponent from "../CardComponent";
+import { CardContainer } from "../../../containers/sw/CardContainer";
 
 import "./style.scss";
 
@@ -9,7 +9,7 @@ export default function CardsComponent(props) {
   return (
     <div className={"cards"}>
       {data.map((card, key) => (
-        <CardComponent card={card} key={key} />
+        <CardContainer card={card} key={key} />
       ))}
     </div>
   );

@@ -46,7 +46,7 @@
       height: 100%;
       transition: 0.5s all;
 
-      color: #ffe300;
+      animation: loader 1s infinite ease-in-out;
     }
   }
 }

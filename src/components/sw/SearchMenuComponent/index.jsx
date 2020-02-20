@@ -6,15 +6,20 @@ import "./style.scss";
 export default function SearchMenuComponent(props) {
   const { title = "swApi" } = props;
 
-  const { getObjects } = props;
+  const { getObjects, setCurrentCategory } = props;
 
   const [isSearchCategory, setIsSearchCategory] = useState("");
+
+  const handleSelect = category => {
+    setIsSearchCategory(category);
+    setCurrentCategory(category);
+  };
 
   return (
     <div className={"searchMenu"}>
       <select
         value={isSearchCategory}
-        onChange={e => setIsSearchCategory(e.currentTarget.value)}
+        onChange={e => handleSelect(e.currentTarget.value)}
       >
         <option value="" disabled>
           category...

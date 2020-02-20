@@ -3,7 +3,7 @@ import React from "react";
 import "./style.scss";
 
 export default function ButtonComponent(props) {
-  const { value, url, handleClick, isDisabled } = props;
+  const { value, url, handleClick, isDisabled = false } = props;
 
   return (
     <div className={"buttonContainer"}>
