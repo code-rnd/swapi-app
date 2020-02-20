@@ -10,14 +10,17 @@ export default function SearchMenuComponent(props) {
 
   return (
     <div className={"searchMenu"}>
-      <input
-        type={"text"}
-        placeholder={"people, planets, starships..."}
+      <select
         value={isSearchCategory}
-        onChange={e => {
-          setIsSearchCategory(e.currentTarget.value);
-        }}
-      />
+        onChange={e => setIsSearchCategory(e.currentTarget.value)}
+      >
+        <option value="" disabled>
+          category...
+        </option>
+        <option value={"people"}>people</option>
+        <option value={"planets"}>planets</option>
+        <option value={"starships"}>starships</option>
+      </select>
       <ButtonComponent
         value={"load"}
         url={isSearchCategory}

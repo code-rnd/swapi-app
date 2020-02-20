@@ -37,11 +37,19 @@ export default function WidjetComponent(props) {
     );
   };
 
+  const getFormLoading = () => {
+    return (
+      <div className="loading">
+        <div className="spinner">loading...</div>
+      </div>
+    );
+  };
+
   return (
     <div className={"widjet"}>
       <SearchMenuComponent getObjects={getObjects} />
       {isResults && getFormDisplay()}
-      {isFetching && "loading..."}
+      {isFetching && getFormLoading()}
     </div>
   );
 }
