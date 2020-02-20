@@ -18,7 +18,8 @@ export default function CardComponent(props) {
       return;
     }
 
-    getImage(currentCategory, card.name, isPageNumber);
+    isSetPageNumber(+getElArrUtil(card.url, "/", -2));
+    // getImage(currentCategory, card.name, isPageNumber);
   }, [card]);
 
   const getCard = () => {

@@ -5,7 +5,7 @@ export const instance = axios.create({
 });
 
 export const googleapis = {
-  key: "AIzaSyAY8Jjr_GmPwib-96VEYdGalK8PkTJXN88",
+  key: "AIzaSyBoCFh5Q-VWqeHVo79qVHiUd7pv1gLXrOw",
   cx: "007074449554332473585:czru3hp7ebi",
   otherAttrUrl: "star wars",
 

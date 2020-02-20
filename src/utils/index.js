@@ -13,3 +13,19 @@ export const getNewArrayObjectsUtil = (array, obj) => {
 
   return newArray;
 };
+
+export const getUrlUtil = object => {
+  if (!object) {
+    return {};
+  }
+
+  let url = Object.keys(object).map(item => object[item])[1][0].url;
+
+  if (url) {
+    return url;
+  }
+
+  url = Object.keys(object).map(item => object[item])[1][0].image;
+
+  return url;
+};

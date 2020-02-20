@@ -1,5 +1,6 @@
 import { toggleIsFetching, setImage } from "..";
 import { googleapis } from "../../../../api/googleapis";
+import { getUrlUtil } from "../../../../utils";
 
 export const getImage = (category, name, id) => {
   return dispatch => {
@@ -9,7 +10,9 @@ export const getImage = (category, name, id) => {
       .getImage(name)
       .then(data => {
         dispatch(toggleIsFetching(false));
-        dispatch(setImage({ category, data: data.response, id }));
+        dispatch(
+          setImage({ category, url: getUrlUtil(data.items[0].pagemap), id })
+        );
       })
       .catch(() => {
         dispatch(toggleIsFetching(false));
