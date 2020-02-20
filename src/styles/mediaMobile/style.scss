@@ -1,5 +1,6 @@
 @media (orientation: portrait) {
   .widjet {
+    width: 100%;
     max-width: 100%;
     height: 100%;
     border: none;
@@ -7,6 +8,13 @@
 
     .display {
       height: 100%;
+
+      .card {
+        max-height: 96%;
+        min-width: fit-content;
+
+        overflow-x: scroll;
+      }
     }
 
     input[type="text"],

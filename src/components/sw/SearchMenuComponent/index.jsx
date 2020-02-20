@@ -4,6 +4,8 @@ import ButtonComponent from "../ButtonComponent";
 import "./style.scss";
 
 export default function SearchMenuComponent(props) {
+  const { title = "swApi" } = props;
+
   const { getObjects } = props;
 
   const [isSearchCategory, setIsSearchCategory] = useState("");
@@ -21,6 +23,7 @@ export default function SearchMenuComponent(props) {
         <option value={"planets"}>planets</option>
         <option value={"starships"}>starships</option>
       </select>
+      <div className={"title"}>{title}</div>
       <ButtonComponent
         value={"load"}
         url={isSearchCategory}
