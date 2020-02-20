@@ -1,0 +1,17 @@
+@media (orientation: portrait) {
+  .widjet {
+    max-width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+
+    .display {
+      height: 100%;
+    }
+
+    input[type="text"],
+    input[type="button"] {
+      font-size: inherit;
+    }
+  }
+}

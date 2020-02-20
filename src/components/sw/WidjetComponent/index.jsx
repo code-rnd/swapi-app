@@ -7,8 +7,9 @@ import SearchMenuComponent from "../SearchMenuComponent";
 import "./style.scss";
 
 export default function WidjetComponent(props) {
-  const { objects } = props;
-  const { next, previous, results } = objects;
+  const {
+    objects: { next, previous, results }
+  } = props;
 
   const { isFetching } = props;
   const { getObjects } = props;

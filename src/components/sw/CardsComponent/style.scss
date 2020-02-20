@@ -1,4 +1,6 @@
 .cards {
   height: 86%;
-  overflow: scroll;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
 }

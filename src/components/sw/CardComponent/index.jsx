@@ -12,7 +12,7 @@ export default function CardComponent(props) {
     };
 
     return (
-      <div className={"card margin-bottom20px"}>
+      <div className={"card margin-right20px"}>
         {Object.keys(card).map(
           (item, keyItem) =>
             !Array.isArray(card[item]) && (
