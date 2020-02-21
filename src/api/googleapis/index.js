@@ -5,8 +5,8 @@ export const instance = axios.create({
 });
 
 export const googleapis = {
-  key: "AIzaSyBoCFh5Q-VWqeHVo79qVHiUd7pv1gLXrOw",
-  cx: "007074449554332473585:czru3hp7ebi",
+  key: "none",
+  cx: "none",
   otherAttrUrl: "star wars",
 
   // получить объект, включая урл на изображение
